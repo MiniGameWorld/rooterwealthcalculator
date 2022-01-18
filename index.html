@@ -11,18 +11,23 @@
         }
     </style>
     <script>
-        function calculate () {
-            let hours = document.getElementById('hours').value;
-            let mins = hours * 60;
+        let hours = document.getElementById('hours').value;
+        let mins = hours * 60;
+        function calculateSilver () {
             let paise = mins;
             document.getElementById('output').textContent = paise / 100;
-        }        
+        }
+        function calculateGold () {
+            let paise = mins * 0.8
+            document.getElementById('output').textContent = paise / 100;
+        }
     </script>
 </head>
 <body>
-    <h1>Silver</h1>
+    <h1>Gold</h1>
     <h1 id="output"></h1>
-    <input type='number' id='hours' />
-    <input type='submit' value='calculate' onclick='calculate()' />
+    <input type='number' id='hours' placeholder='Enter listening hours' />
+    <input type='submit' value='calculate for gold' onclick='calculateGold()' />
+    <input type='submit' value='calculate for silver' onclick='calculateSilver()' />
 </body>
 </html>
